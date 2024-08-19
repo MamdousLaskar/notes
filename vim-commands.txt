@@ -1,0 +1,99 @@
+### Vim Basic Commands
+
+1. **Basic Navigation:**
+   - `h`: Move left
+   - `j`: Move down
+   - `k`: Move up
+   - `l`: Move right
+   - `0`: Move to the beginning of the line
+   - `$`: Move to the end of the line
+   - `gg`: Move to the beginning of the file
+   - `G`: Move to the end of the file
+   - `w`: Move forward to the beginning of the next word
+   - `b`: Move backward to the beginning of the previous word
+
+2. **Insert Mode:**
+   - `i`: Insert before the cursor
+   - `I`: Insert at the beginning of the line
+   - `a`: Insert after the cursor
+   - `A`: Insert at the end of the line
+   - `o`: Open a new line below and insert
+   - `O`: Open a new line above and insert
+
+3. **Editing:**
+   - `x`: Delete character under the cursor
+   - `dd`: Delete the current line
+   - `dw`: Delete a word
+   - `d$`: Delete from the cursor to the end of the line
+   - `yy`: Yank (copy) the current line
+   - `p`: Paste after the cursor
+   - `u`: Undo
+   - `Ctrl + r`: Redo
+
+4. **Search and Replace:**
+   - `/text`: Search for "text"
+   - `n`: Move to the next search result
+   - `N`: Move to the previous search result
+   - `:%s/old/new/g`: Replace all occurrences of "old" with "new" in the file
+
+5. **Saving and Quitting:**
+   - `:w`: Save the file
+   - `:q`: Quit Vim
+   - `:wq`: Save and quit
+   - `:q!`: Quit without saving
+
+### Vim Advanced Commands
+
+1. **Visual Mode:**
+   - `v`: Start visual mode (select text)
+   - `V`: Start visual line mode
+   - `Ctrl + v`: Start visual block mode
+   - `y`: Yank (copy) selected text in visual mode
+   - `d`: Delete selected text in visual mode
+   - `r`: Replace selected text with a character in visual mode
+
+2. **Advanced Navigation:**
+   - `Ctrl + o`: Jump back to the previous location
+   - `Ctrl + i`: Jump forward to the next location
+   - `%`: Jump to the matching parenthesis, bracket, or brace
+   - `*`: Search for the word under the cursor forward
+   - `#`: Search for the word under the cursor backward
+
+3. **Macros:**
+   - `q<letter>`: Start recording a macro in the specified register (e.g., `qa` for register "a")
+   - Perform the sequence of commands you want to record
+   - `q`: Stop recording
+   - `@<letter>`: Play back the macro from the specified register (e.g., `@a`)
+
+4. **Registers:**
+   - `"aY`: Yank into register "a"
+   - `"ap`: Paste from register "a"
+   - `"+y`: Yank to the system clipboard
+   - `"+p`: Paste from the system clipboard
+
+5. **Splits and Windows:**
+   - `:split`: Horizontal split
+   - `:vsplit`: Vertical split
+   - `Ctrl + w, h`: Move to the left split
+   - `Ctrl + w, l`: Move to the right split
+   - `Ctrl + w, j`: Move to the split below
+   - `Ctrl + w, k`: Move to the split above
+   - `Ctrl + w, =`: Make all splits equal in size
+
+6. **Buffers and Tabs:**
+   - `:e filename`: Open a file in a new buffer
+   - `:bn`: Go to the next buffer
+   - `:bp`: Go to the previous buffer
+   - `:bd`: Delete the current buffer
+   - `:tabnew filename`: Open a file in a new tab
+   - `:tabn`: Move to the next tab
+   - `:tabp`: Move to the previous tab
+   - `:tabc`: Close the current tab
+
+7. **Ex Commands:**
+   - `:!command`: Run an external command (e.g., `:!ls` to list files)
+   - `:set number`: Show line numbers
+   - `:set nowrap`: Disable line wrapping
+   - `:set paste`: Enable paste mode (useful when pasting code)
+   - `:set spell`: Enable spell checking
+
