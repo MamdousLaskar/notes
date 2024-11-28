@@ -22,9 +22,15 @@ set expandtab               " Use spaces instead of tabs
 set autoindent              " Automatically indent new lines
 set cursorline              " Highlight the current line
 set background=dark         " Use dark background
+set splitright
 colorscheme gruvbox         " Use gruvbox color scheme
 set clipboard=unnamedplus   " Use system clipboard
 set mouse=a                 " Enable mouse support
+
+"leader key
+let mapleader = " "
+"open terminal
+nnoremap <leader>t :vert term<CR>
 
 " Enable plugins
 let g:airline#extensions#tabline#enabled = 1
