@@ -31,6 +31,7 @@ set mouse=a                 " Enable mouse support
 let mapleader = " "
 "open terminal
 nnoremap <leader>t :vert term<CR>
+nnoremap <leader>n :NERDTreeToggle<CR>
 
 " Enable plugins
 let g:airline#extensions#tabline#enabled = 1
