@@ -22,7 +22,7 @@ set expandtab               " Use spaces instead of tabs
 set autoindent              " Automatically indent new lines
 set cursorline              " Highlight the current line
 set background=dark         " Use dark background
-set splitright
+set splitright              " Setting The split screen right for Terminal
 colorscheme gruvbox         " Use gruvbox color scheme
 set clipboard=unnamedplus   " Use system clipboard
 set mouse=a                 " Enable mouse support
@@ -31,7 +31,12 @@ set mouse=a                 " Enable mouse support
 let mapleader = " "
 "open terminal
 nnoremap <leader>t :vert term<CR>
+
+" Toggle NerdTree
 nnoremap <leader>n :NERDTreeToggle<CR>
+
+" Copy all
+nnoremap <leader>a :%y+<CR>
 
 " Enable plugins
 let g:airline#extensions#tabline#enabled = 1
