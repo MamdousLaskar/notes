@@ -1,4 +1,4 @@
-
+" install vim gtk-3
 " Use Vim Plug as the plugin manager
 call plug#begin('~/.vim/plugged')
 
