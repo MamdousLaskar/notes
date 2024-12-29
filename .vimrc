@@ -31,10 +31,9 @@ set mouse=a                 " Enable mouse support
 let mapleader = " "
 
 " Keybindings
-nnoremap <leader>t :vert term<CR>  " Open terminal in a split on the right
 nnoremap <leader>n :NERDTreeToggle<CR>     " Toggle NERDTree
 nnoremap <leader>a :%y+<CR>                " Copy all
-
+nnoremap <leader>t :vert term<Cr>
 " Set the default color scheme to Dracula
 colorscheme dracula
 
