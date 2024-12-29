@@ -1,14 +1,14 @@
 " Use Vim Plug as the plugin manager
 call plug#begin('~/.vim/plugged')
 
+" Dracula color scheme
+Plug 'dracula/vim', { 'as': 'dracula' }
+
 " Plugin for auto-closing brackets, quotes, etc.
 Plug 'jiangmiao/auto-pairs'
 
 " File explorer
 Plug 'preservim/nerdtree'
-
-" Gruvbox color scheme
-Plug 'morhetz/gruvbox'
 
 call plug#end()
 
@@ -31,18 +31,10 @@ set mouse=a                 " Enable mouse support
 let mapleader = " "
 
 " Keybindings
-nnoremap <leader>t :vert term<CR>      " Open terminal
-nnoremap <leader>n :NERDTreeToggle<CR> " Toggle NerdTree
-nnoremap <leader>a :%y+<CR>            " Copy all
-nnoremap <leader>r :w<CR>:! javac % && java %:r<CR>  " Compile and run Java programs
+nnoremap <leader>t :vert term<CR>  " Open terminal in a split on the right
+nnoremap <leader>n :NERDTreeToggle<CR>     " Toggle NERDTree
+nnoremap <leader>a :%y+<CR>                " Copy all
 
-" Customize AutoPairs settings
-let g:AutoPairsMapBS = 1    " Map backspace to delete pair
-let g:AutoPairsMapSpace = 1 " Map space to insert pair
-
-" Set Java-specific settings
-autocmd FileType java setlocal tabstop=4 shiftwidth=4 expandtab
-
-" Set the default color scheme to Gruvbox
-colorscheme gruvbox
+" Set the default color scheme to Dracula
+colorscheme dracula
 
