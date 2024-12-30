@@ -97,6 +97,19 @@ nnoremap <leader>g :GFiles<CR>
 " Terminal shortcuts
 nnoremap <leader>t :term<CR>
 
+" Java-specific shortcuts
+" Compile Java file
+nnoremap <leader>jc :w <CR>:!javac %<CR>
+" Run Java file
+nnoremap <leader>jr :!java %:r<CR>
+" Compile and run Java file
+nnoremap <leader>ja :w <CR>:!javac % && java %:r<CR>
+" Open a terminal split below for Java output
+nnoremap <leader>jt :below split<CR>:terminal<CR>
+
+" Java autocomplete settings (if using CoC)
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
+
 " NERDTree settings
 let NERDTreeShowHidden=1
 let NERDTreeQuitOnOpen=1
@@ -109,3 +122,9 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in
 
 " Close Vim if NERDTree is the only window remaining
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
+" Set specific settings for Java files
+autocmd FileType java setlocal expandtab
+autocmd FileType java setlocal tabstop=4
+autocmd FileType java setlocal softtabstop=4
+autocmd FileType java setlocal shiftwidth=4
