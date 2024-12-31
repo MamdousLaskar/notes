@@ -38,7 +38,8 @@ call plug#begin('~/.vim/plugged')
 " File explorer
 Plug 'preservim/nerdtree'
 " Theme
-Plug 'morhetz/gruvbox'
+Plug 'joshdick/onedark.vim'
+Plug 'rakr/vim-one'
 " Auto pairs for brackets
 Plug 'jiangmiao/auto-pairs'
 " Status line
@@ -55,8 +56,10 @@ Plug 'tpope/vim-commentary'
 call plug#end()
 
 " Theme settings
-set background=dark
-colorscheme gruvbox
+set termguicolors
+let g:one_allow_italics = 1
+colorscheme one
+let g:airline_theme='one'
 
 " Auto closing brackets (backup in case auto-pairs plugin fails)
 inoremap ( ()<Left>
