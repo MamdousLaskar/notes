@@ -105,5 +105,4 @@ alias ls=lsd
 alias upgrade="sudo apt update -y && sudo apt upgrade -y && flatpak update -y && sudo apt autoremove -y && exit"
 alias zen="flatpak run io.github.zen_browser.zen"
 alias discord="flatpak run com.discordapp.Discord"
-alias build="javac Main.java && java Main"
 # Install Oh my posh
