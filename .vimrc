@@ -59,7 +59,7 @@ call plug#end()
 set termguicolors
 let g:one_allow_italics = 1
 colorscheme onedark
-let g:airline_theme='one'
+let g:airline_theme='onedark'
 
 " Auto closing brackets (backup in case auto-pairs plugin fails)
 inoremap ( ()<Left>
