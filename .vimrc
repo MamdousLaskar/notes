@@ -58,7 +58,7 @@ call plug#end()
 " Theme settings
 set termguicolors
 let g:one_allow_italics = 1
-colorscheme one
+colorscheme onedark
 let g:airline_theme='one'
 
 " Auto closing brackets (backup in case auto-pairs plugin fails)
