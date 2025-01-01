@@ -21,6 +21,8 @@ set hlsearch
 set ignorecase
 set smartcase
 set scrolloff=8
+set wrap
+set textwidth=80
 set updatetime=300
 set timeoutlen=500
 
