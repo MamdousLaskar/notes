@@ -25,7 +25,7 @@ set updatetime=300
 set timeoutlen=500
 
 " Set comma as leader key
-let mapleader = ","
+let mapleader = " "
 
 " Install vim-plug if not found
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -99,6 +99,10 @@ nnoremap <leader>g :GFiles<CR>
 
 " Terminal shortcuts
 nnoremap <leader>t :term<CR>
+nnoremap <leader>vt :vert term<CR>
+
+" For copying all 
+nnoremap <leader>ya :%y+<CR>
 
 " Java-specific shortcuts
 " Compile Java file
