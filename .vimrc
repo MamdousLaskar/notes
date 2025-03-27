@@ -56,11 +56,18 @@ Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive'
 " Comment toggler
 Plug 'tpope/vim-commentary'
+" Gruvbox theme
+Plug 'morhetz/gruvbox'
 call plug#end()
 
-" Use a built-in dark theme (No installation needed)
+" Enable true color support
+if has("termguicolors")
+    set termguicolors
+endif
+
+" Set Gruvbox theme
 set background=dark
-colorscheme slate
+colorscheme gruvbox
 
 " Auto closing brackets (backup in case auto-pairs plugin fails)
 inoremap ( ()<Left>
