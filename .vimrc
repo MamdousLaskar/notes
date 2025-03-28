@@ -1,80 +1,36 @@
-" Basic Settings
-set nocompatible
-syntax enable
-set number
-set relativenumber
-set encoding=utf-8
-set hidden
-set nowrap
-set tabstop=4
-set shiftwidth=4
-set expandtab
-set smartindent
-set autoindent
-set mouse=a
+" Auto-install vim-plug if not already installed
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall | source $MYVIMRC
+endif
+
+" Use vim-plug for plugin management
+call plug#begin('~/.vim/plugged')
+
+" Plugins
+Plug 'jiangmiao/auto-pairs'         " Auto-close brackets
+Plug 'joshdick/onedark.vim'         " One Dark theme
+Plug 'preservim/nerdtree'           " File explorer
+Plug 'vim-airline/vim-airline'      " Status bar
+Plug 'tpope/vim-commentary'         " Easy commenting
+Plug 'junegunn/fzf.vim'             " Fuzzy finder (requires fzf)
+
+call plug#end()
+
+" General settings
+syntax on                      " Enable syntax highlighting
+set number                     " Show line numbers
+set relativenumber             " Relative line numbers
+set tabstop=4                  " Tab width
+set shiftwidth=4               " Indentation width
+set expandtab                  " Use spaces instead of tabs
 set splitright
 set splitbelow
-set cursorline
-set showmatch
-set incsearch
-set hlsearch
-set ignorecase
-set smartcase
-set scrolloff=8
 set wrap
-set textwidth=80
-set updatetime=300
-set timeoutlen=500
-
-" Remove window border gaps (make splits tight)
-set winwidth=1
-set winminwidth=1
-set winheight=1
-set winminheight=1
-
-" Ensure Vim starts in fullscreen
-if exists('g:GuiLoaded')
-    set guioptions+=mT  " Hide menu bar (GVim)
-    silent! set lines=999 columns=999 " Maximize
-endif
-
-" If using tmux, maximize Vim pane
-if $TMUX != ''
-    silent !tmux resize-pane -Z
-endif
 
 " Set leader key to space
 let mapleader = " "
-
-" Plugins (Only Essentials)
-call plug#begin('~/.vim/plugged')
-" File explorer
-Plug 'preservim/nerdtree'
-" Status line
-Plug 'vim-airline/vim-airline'
-" Git integration
-Plug 'tpope/vim-fugitive'
-" Comment toggler
-Plug 'tpope/vim-commentary'
-" Gruvbox theme
-Plug 'morhetz/gruvbox'
-call plug#end()
-
-" Enable true color support
-if has("termguicolors")
-    set termguicolors
-endif
-
-" Set Gruvbox theme
-set background=dark
-colorscheme gruvbox
-
-" Auto closing brackets (backup in case auto-pairs plugin fails)
-inoremap ( ()<Left>
-inoremap [ []<Left>
-inoremap { {}<Left>
-inoremap ' ''<Left>
-inoremap " ""<Left>
 
 " Custom shortcuts
 " NERDTree
@@ -111,16 +67,5 @@ nnoremap <leader>ja :w <CR>:!javac % && java %:r<CR>
 " Open a terminal split below for Java output
 nnoremap <leader>jt :below split<CR>:terminal<CR>
 
-" NERDTree settings
-let NERDTreeShowHidden=1
-let NERDTreeQuitOnOpen=1
-let NERDTreeAutoDeleteBuffer=1
-let g:NERDTreeMinimalUI = 1 " Removes extra UI elements in NERDTree
-
-" Start NERDTree when Vim starts with a directory argument
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') |
-    \ execute 'NERDTree' argv()[0] | wincmd p | enew | execute 'cd '.argv()[0] | endif
-
-" Close Vim if NERDTree is the only window remaining
-autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+" Airline configuration
+let g:airline#extensions#tabline#enabled = 1
